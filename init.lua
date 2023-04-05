@@ -20,6 +20,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
+
 -- NOTE: Here is where you install your plugins.
 --	You can configure plugins using the `config` key.
 --
@@ -87,7 +89,6 @@ require('lazy').setup({
   },
 
   {
-    -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
@@ -155,7 +156,7 @@ require('lazy').setup({
       vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
       require("neo-tree").setup({
         -- Open to the whole window instead of as a sidebar
-        filesystem = { window = { position = "current" } },
+        -- filesystem = { window = { position = "current" } },
       })
     end
   },
@@ -189,7 +190,7 @@ vim.o.expandtab = false
 vim.o.hlsearch = false
 
 -- Make hybrid line numbers default
-vim.wo.relativenumber = true
+vim.wo.relativenumber = false
 vim.wo.number = true
 
 -- Enable mouse mode
